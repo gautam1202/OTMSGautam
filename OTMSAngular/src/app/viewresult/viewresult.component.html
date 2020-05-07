@@ -1,0 +1,17 @@
+<table class="col-md-10 mx-auto table table-striped table-hover table-bordered mt-4">
+    <tr>
+    <th>Test ID</th>
+    <th>Test Title</th>
+    <th>Total Marks</th>
+    <th>Total Marks Scored</th>
+    </tr>
+    <tr *ngFor = "let test of tests ">
+     <td>{{test.testId}}</td>  
+        <td>{{test.testTitle}}</td>  
+            <td>{{test.testTotalMarks}}</td>  
+                <td>{{test.testMarksScored}}</td> 
+                <td><a class="btn btn-dark text-white" (click)="calculateResult(test.testId)">calculateResult</a>
+                
+                <!-- <td><a class="btn btn-dark text-white" (click)="updateTest(test.testId)">Update</a> </td> -->
+            </tr>
+        </table>

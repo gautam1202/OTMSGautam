@@ -1,0 +1,33 @@
+this page will show the all questions table
+
+
+<table class="table table-stripped"   style="width: fit-content;">
+    <thead class="thead-dark">
+        <tr *ngIf="questions">
+            <th>Question Id</th>
+            <th>Question Title</th>
+            <th>Option1</th>
+            <th>Option2</th>
+            <th>Option3</th>
+            <th>Option4</th>
+            <th>Answer</th>
+            <th>Chosen Answer</th>
+            <th>Marks</th>
+        </tr>
+    </thead>
+
+        <tr *ngFor="let ques of questions" >
+            <td>{{ques.questionId}}</td>
+            <td>{{ques.questionTitle}}</td>
+            <td>{{ques.option1}}</td>
+            <td>{{ques.option2}}</td>
+            <td>{{ques.option3}}</td>
+            <td>{{ques.option4}}</td>
+            <td>{{ques.questionAnswer}}</td>
+            <td>{{ques.chosenAnswer}}</td>
+            <td>{{ques.questionMarks}}</td>      
+            
+        </tr>
+    
+</table>
+
