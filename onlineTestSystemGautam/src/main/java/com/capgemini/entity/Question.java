@@ -24,8 +24,7 @@ public class Question {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer questionId;
-	//@Column
-	//private String questionOptions[]=new String[3];
+ 
 	@Column
 	private String option1;
 	@Column

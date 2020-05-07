@@ -17,7 +17,6 @@ import com.capgemini.entity.Tests;
 		
 		public void saveTests(Tests test);
 		public Tests getTests(Integer testId);
-//		public List retrieve();
 		List<Tests> getTestList();
 		public Optional<Tests> findById(Integer testId);
 	

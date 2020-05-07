@@ -129,7 +129,6 @@ public class OnlineTestSystemGautamApplication implements CommandLineRunner{
 
 		Tests t3 = new Tests();
 		t3.setTestTitle("Java");
-		//t.setTestId(105);
 		t3.setTestTotalMarks(20.0);
 		t3.setTestMarksScored(0.0);
 		
@@ -193,18 +192,3 @@ public class OnlineTestSystemGautamApplication implements CommandLineRunner{
 
 
 
-
-
-
-
-//
-//
-//@ExceptionHandler(IdNotFoundException.class)
-//public ResponseEntity<String> userNotFound(IdNotFoundException e) {
-//	return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-//}
-//@ExceptionHandler(UserNotFoundException.class)
-//public ResponseEntity<String> userNotFound(UserNotFoundException e){
-//	return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-//}
-	

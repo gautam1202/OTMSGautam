@@ -51,7 +51,6 @@ public class ResultController {
 	public ResponseEntity<Double> getResult(@PathVariable("testId") Integer testId)
 	{
 		Double marks=resultservice.getResult(testId);
-		//getResult(test);
 		return new ResponseEntity<Double>(marks,HttpStatus.OK);
 	
 	}
