@@ -24,12 +24,34 @@ public class ResultServiceImp implements IResultService {
 
 	@Autowired
 	IResultDao resultdao;
+	
+	
+	
+	/****************************************************************
+	 * Method - getResult
+	 * description - to get the result of the tests
+	 * @param testId - Test's id
+	 * @return - object of class Test
+	 * @author - Gautam Anand
+	 * created date - 17-APR-2020
+	 ******************************************************************/
 
 	@Override
 	public Double getResult(Integer testId) {
 		Tests test = resultdao.getTests(testId);
 		return test.getTestMarksScored();
 	}
+	
+	
+	
+	/****************************************************************
+	 * Method - calculate total marks
+	 * description - to calculate the result of the test
+	 * @param testId - Test's id
+	 * @return -  of class Test
+	 * @author - Gautam Anand
+	 * created date - 17-APR-2020
+	 ******************************************************************/
 
 	@Override
 	public Double calculateTotalMarks(Integer testId) {
@@ -48,26 +70,17 @@ public class ResultServiceImp implements IResultService {
 		return testTotalMarks;
 	}
 
+	/****************************************************************
+	 * Method - getAllTest
+	 * description - get all the data from the table
+	 * @return - all the object of class Test
+	 * @author - Gautam Anand
+	 * created date - 21-APR-2020
+	 ******************************************************************/
+	
 	@Override
 	public List<Tests> getResultList() {
 		return resultdao.getTestList();
 	}
 
 }
-
-/*
- * if( User.isAdmin != true) { return dao.getResult(test); } else { throw new
- * NotStudentException("Only student can give the test");
- * 
- * } }
- * 
- * void validateUserId(long userId) { if (userId <= 0) { throw new
- * IncorrectIdException("User id is null"); } }
- * 
- * void validatetestId(BigInteger testId) { if ( testId.equals(null)) { throw
- * new IncorrectIdException("test id is null"); } } }
- * 
- * void validatequestionId(BigInteger questionId) { if (
- * questionId.equals(null)) { throw new
- * IncorrectIdException("question id is null"); } }
- */

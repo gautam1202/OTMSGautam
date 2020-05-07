@@ -16,6 +16,10 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
+/*****************************************************************************
+ * it is useful with model classes to denote that this is the entity or table
+ * @author Gautam
+ ****************************************************************************/
 @Table(name="test_table1")
 public class Tests {
 

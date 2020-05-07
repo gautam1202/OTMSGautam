@@ -20,27 +20,54 @@ import com.capgemini.entity.Question;
 import com.capgemini.entity.Tests;
 
 @Repository
+
+/*********************************************************************************
+ @Repository annotation is used to indicate that the class provides the mechanism 
+for storage, retrieval, search, update and delete operation on objects.
+**********************************************************************************/
+
 @Transactional
 public class ResultDaoImp implements IResultDao{
 	
 	@PersistenceContext
+	/*****************************************************************
+	 The @PersistenceContext annotation in your code is being used 
+	 to indicate that the EntityManager must be automatically injected.
+	 *******************************************************************/
+	
 	EntityManager em;
+	/*****************************************************************
+	 entity manager can manage your entities. Entity Manager handles 
+	   all interactions with the database.
+	 *******************************************************************/
 
 
 	@Override
 	public void saveTests(Tests test) {
-		em.persist(test);
 		
+		em.persist(test);
+		/*****************************************************************************************
+		The persist method is intended for adding a new entity instance to the persistence context,
+		*******************************************************************************************/
+	
 	}
 
 	@Override
 	public Tests getTests(Integer testId) {
-		//TypedQuery q=(TypedQuery) em.createQuery("select test from Tests test");
-		//TypedQuery<Tests> query = em.createQuery("SELECT test FROM Tests test",Tests.class);
-		//return (Tests) query.getResultList();
+
 		return em.find(Tests.class, testId);
 		
 	}
+	
+	
+	/*************************************************************************************************
+	  Method - getTestList 
+      Description - To fetch all Test Details from the Test Table in database.
+      @param from getTestList      - void.
+	  @returns List<Tests>      - return List of Object where each object contains details of a particular Test.   
+      Created By                   - Gautam Anand
+      Created Date                 - 21-APR-2020                           
+	 **************************************************************************************************/
 	
 	@Override
 	public List<Tests> getTestList()
@@ -49,23 +76,13 @@ public class ResultDaoImp implements IResultDao{
 		TypedQuery<Tests> query=em.createQuery(qstr, Tests.class);
 		return query.getResultList();
 	}
+	
+	
 	@Override
-	public Optional<Tests> findById(Integer testId) {
-		// TODO Auto-generated method stub
+	public Optional<Tests> findById(Integer testId)
+	{
 		return null;
 	}
-
-//	
-//
-//	@Override
-//	public List retrieve() {
-//		TypedQuery<Tests> query = em.createQuery("SELECT test FROM Tests test",Tests.class);
-//		return query.getResultList();
-//	}
-
-
-	}
-
-
+}
 	
 	
